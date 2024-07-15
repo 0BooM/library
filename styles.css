@@ -57,4 +57,5 @@ main .bookCard h2 {
 
 main .bookCard h3 {
   text-align: left;
+  margin-bottom: 0.6rem;
 }
