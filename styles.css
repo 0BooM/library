@@ -34,7 +34,7 @@ h3 {
   font-size: 1.6rem;
 }
 
-main {
+main .booksList {
   padding: 0rem 25rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -48,13 +48,13 @@ main .bookCard {
   padding: 1.6rem 3rem;
 }
 
-main .bookCard .bookTitle {
+main .bookCard h2 {
   width: 100%;
   border-bottom: 1px solid white;
   padding-bottom: 1rem;
   margin-bottom: 1rem;
 }
 
-main .bookCard .bookInfo {
+main .bookCard h3 {
   text-align: left;
 }
