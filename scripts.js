@@ -64,7 +64,7 @@ function formValidation() {
     if (title.value.length >= 10)
       titleSpan.innerText = "Correct number of characters";
     else {
-      titleSpan.innerText = "At least 10 characters";
+      titleSpan.innerText = "At least 10 characters!";
     }
   });
 
@@ -74,7 +74,7 @@ function formValidation() {
     if (author.value.length >= 5)
       authorSpan.innerText = "Correct number of characters";
     else {
-      authorSpan.innerText = "At least 5 characters";
+      authorSpan.innerText = "At least 5 characters!";
     }
   });
 

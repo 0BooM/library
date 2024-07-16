@@ -142,6 +142,19 @@ span {
   margin-bottom: 2rem;
 }
 
+.incorrect {
+  color: rgb(255, 72, 72);
+}
+.incorrect::before {
+  content: "X ";
+}
+.correct {
+  color: #059669;
+}
+.correct::before {
+  content: "✔️ ";
+}
+
 dialog form input[type="submit"] {
   width: 50%;
   margin: 0 auto;
