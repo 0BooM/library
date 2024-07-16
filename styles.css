@@ -96,6 +96,10 @@ dialog {
   border: 2px solid black;
 }
 
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
 dialog .closeDialog {
   border-radius: 0;
   padding: 0.5rem 1rem;
