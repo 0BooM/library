@@ -24,7 +24,22 @@ header {
   color: white;
   padding: 2rem 0;
   border-bottom: 4px solid #5472a3;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
+}
+
+body button {
+  color: white;
+  background-color: #5472a3;
+  border: none;
+  padding: 1rem 3rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  cursor: pointer;
+}
+body button:hover {
+  background-color: #658ac5;
 }
 
 h2 {
