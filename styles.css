@@ -152,6 +152,7 @@ span {
   color: #059669;
 }
 .correct::before {
+  font-size: 1rem;
   content: "✔️ ";
 }
 

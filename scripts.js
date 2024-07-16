@@ -61,29 +61,36 @@ function formValidation() {
   let titleSpan = document.querySelector(".titleSpan");
 
   title.addEventListener("input", (e) => {
-    if (title.value.length >= 10)
+    if (title.value.length >= 10) {
       titleSpan.innerText = "Correct number of characters";
-    else {
+      titleSpan.classList.add("correct");
+    } else {
       titleSpan.innerText = "At least 10 characters!";
+      titleSpan.classList.remove("correct");
     }
   });
 
   let author = document.querySelector("#author");
   let authorSpan = document.querySelector(".authorSpan");
   author.addEventListener("input", (e) => {
-    if (author.value.length >= 5)
+    if (author.value.length >= 5) {
       authorSpan.innerText = "Correct number of characters";
-    else {
+      authorSpan.classList.add("correct");
+    } else {
       authorSpan.innerText = "At least 5 characters!";
+      authorSpan.classList.remove("correct");
     }
   });
 
   let pages = document.querySelector("#pages");
   let pagesSpan = document.querySelector(".pagesSpan");
   pages.addEventListener("input", (e) => {
-    if (+pages.value >= 1) pagesSpan.innerText = "Correct!";
-    else {
+    if (+pages.value >= 1) {
+      pagesSpan.innerText = "Correct!";
+      pagesSpan.classList.add("correct");
+    } else {
       pagesSpan.innerText = "Book must contain page!";
+      pagesSpan.classList.remove("correct");
     }
   });
 
@@ -93,10 +100,12 @@ function formValidation() {
     if (
       bookStatus.value.toUpperCase() == "READ" ||
       bookStatus.value.toUpperCase() == "UNREAD"
-    )
+    ) {
       statusSpan.innerText = "Correct!";
-    else {
+      statusSpan.classList.add("correct");
+    } else {
       statusSpan.innerText = "Incorrect! Available statuses: Read/Unread";
+      statusSpan.classList.remove("correct");
     }
   });
 }
