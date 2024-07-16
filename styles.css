@@ -27,7 +27,17 @@ header {
   margin-bottom: 2rem;
 }
 
-body button {
+body .addBook,
+dialog .closeDialog,
+dialog form input[type="submit"] {
+  color: white;
+  font-size: 1.6rem;
+  cursor: pointer;
+  font-weight: bold;
+  border: none;
+}
+
+body .addBook {
   color: white;
   background-color: #5472a3;
   border: none;
@@ -38,7 +48,7 @@ body button {
   margin-bottom: 2rem;
   cursor: pointer;
 }
-body button:hover {
+body .addBook:hover {
   background-color: #658ac5;
 }
 
@@ -73,4 +83,60 @@ main .bookCard h2 {
 main .bookCard h3 {
   text-align: left;
   margin-bottom: 0.6rem;
+}
+
+dialog {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  background-color: #334155;
+  border-radius: 1rem;
+  border: 2px solid black;
+}
+
+dialog .closeDialog {
+  border-radius: 0;
+  padding: 0.5rem 1rem;
+  background-color: rgb(255, 72, 72);
+  margin: 0;
+  position: absolute;
+  right: 0;
+  border-top-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+dialog .closeDialog:hover {
+  background-color: red;
+}
+
+dialog form {
+  padding: 3rem 6rem;
+  font-size: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+dialog form label {
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+  color: white;
+}
+dialog form input {
+  padding: 0.2rem 0.4rem;
+  margin-bottom: 2rem;
+  font-size: 1.6rem;
+  border-radius: 0.6rem;
+  border: 2px solid black;
+}
+
+dialog form input[type="submit"] {
+  width: 50%;
+  margin: 0 auto;
+  padding: 0.6rem 0;
+  background-color: #059669;
+}
+dialog form input[type="submit"]:hover {
+  background-color: #065f46;
 }

@@ -13,6 +13,20 @@
     </header>
     <button class="addBook">Add Book</button>
     <main>
+      <dialog class="addBookDialog" open>
+        <button class="closeDialog">X</button>
+        <form action="">
+          <label for="title">Book title:</label>
+          <input type="text" name="title" id="title" />
+          <label for="author">Book author:</label>
+          <input type="text" name="author" id="author" />
+          <label for="pages">Book pages:</label>
+          <input type="number" name="pages" id="pages" />
+          <label for="status">Read/Unread:</label>
+          <input type="text" name="status" id="status" />
+          <input type="submit" value="Add book" />
+        </form>
+      </dialog>
       <div class="booksList"></div>
     </main>
   </body>
