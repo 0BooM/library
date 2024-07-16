@@ -74,3 +74,37 @@ addBookFormBtn.addEventListener("click", (e) => {
   pages.value = "";
   status.value = "";
 });
+
+let title = document.querySelector("#title");
+let titleSpan = document.querySelector(".titleSpan");
+
+title.addEventListener("input", (e) => {
+  if (title.value.length < 10) titleSpan.innerText = "At least 10 characters";
+  else titleSpan.innerText = "Correct number of characters";
+});
+
+let author = document.querySelector("#author");
+let authorSpan = document.querySelector(".authorSpan");
+author.addEventListener("input", (e) => {
+  if (author.value.length < 5) authorSpan.innerText = "At least 5 characters";
+  else authorSpan.innerText = "Correct number of characters";
+});
+
+let pages = document.querySelector("#pages");
+let pagesSpan = document.querySelector(".pagesSpan");
+pages.addEventListener("input", (e) => {
+  if (+pages.value < 1) pagesSpan.innerText = "Book must contain page!";
+  else pagesSpan.innerText = "Correct!";
+});
+
+let bookStatus = document.querySelector("#status");
+let statusSpan = document.querySelector(".statusSpan");
+bookStatus.addEventListener("input", (e) => {
+  if (
+    bookStatus.value.toUpperCase() == "READ" ||
+    bookStatus.value.toUpperCase() == "UNREAD"
+  )
+    statusSpan.innerText = "Correct!";
+  else statusSpan.innerText = "Incorrect! Available statuses: Read/Unread";
+  console.log(bookStatus.value);
+});

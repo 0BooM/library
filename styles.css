@@ -130,10 +130,16 @@ dialog form label {
 }
 dialog form input {
   padding: 0.2rem 0.4rem;
-  margin-bottom: 2rem;
   font-size: 1.6rem;
   border-radius: 0.6rem;
   border: 2px solid black;
+}
+span {
+  font-size: 1.4rem;
+  width: 30ch;
+  color: white;
+  margin-top: 0.4rem;
+  margin-bottom: 2rem;
 }
 
 dialog form input[type="submit"] {

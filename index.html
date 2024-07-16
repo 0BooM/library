@@ -18,12 +18,18 @@
         <form action="">
           <label for="title">Book title:</label>
           <input type="text" name="title" id="title" />
+          <span class="titleSpan">At least 10 characters</span>
           <label for="author">Book author:</label>
           <input type="text" name="author" id="author" />
+          <span class="authorSpan">At least 5 characters</span>
           <label for="pages">Book pages:</label>
-          <input type="number" name="pages" id="pages" />
+          <input type="number" min="1" name="pages" id="pages" />
+          <span class="pagesSpan">Book must contain page</span>
           <label for="status">Read/Unread:</label>
           <input type="text" name="status" id="status" />
+          <span class="statusSpan"
+            >Incorrect! Available statuses: Read/Unread</span
+          >
           <input type="submit" value="Add book" id="addBookForm" />
         </form>
       </dialog>
