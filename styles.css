@@ -15,7 +15,7 @@ body {
   background-color: #1e293b;
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
   text-align: center;
 }
 
@@ -64,6 +64,7 @@ main .booksList {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 3rem;
+  padding-bottom: 4rem;
 }
 
 main .bookCard {
