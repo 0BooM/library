@@ -15,9 +15,10 @@ function addBookToLibrary(title, author, pagesAmount, readStatus) {
 addBookToLibrary("Mały Książę", "Antoine de Saint-Exupéry", 300, "Read");
 addBookToLibrary("Wiedźmin", "Andrzej Sapkowski", 243, "Unread");
 addBookToLibrary("Pan Tadeusz", "Adam Mickiewicz", 345, "Unread");
-addBookToLibrary("Kordian", "Juliusz Słowacki", 322, "Read");
 
 function displayBook() {
+  const main = document.querySelector("main");
+  main.innerHTML = '<div class="booksList"></div>';
   let booksCardList = document.querySelector(".booksList");
   for (book in myLibrary) {
     let bookCard = document.createElement("div");
@@ -53,4 +54,23 @@ addBookBtn.addEventListener("click", (e) => {
 let closeDialogBtn = document.querySelector(".closeDialog");
 closeDialogBtn.addEventListener("click", (e) => {
   dialog.close();
+});
+
+let addBookFormBtn = document.querySelector("#addBookForm");
+addBookFormBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  let title = document.querySelector("#title");
+  let author = document.querySelector("#author");
+  let pages = document.querySelector("#pages");
+  let status = document.querySelector("#status");
+
+  addBookToLibrary(title.value, author.value, pages.value, status.value);
+  displayBook();
+  dialog.close();
+
+  title.value = "";
+  author.value = "";
+  pages.value = "";
+  status.value = "";
 });
