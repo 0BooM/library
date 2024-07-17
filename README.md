@@ -1,5 +1,9 @@
 # library
 
+This site is for every bookwrom out there! You an add books that you have read or that you want to read! Make your own library.
+
+---
+
 After completing this project I feel more comfortable when it comes to managing the DOM and making site more functional than before.
 
 Of course I must have googled some of the stuff to know what it does, how it works etc, but even I googled it I think that it is good for me, because after finding out how to properly google some stuff my work will be easier and I will find the answers faster.
