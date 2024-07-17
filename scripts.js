@@ -26,17 +26,28 @@ function displayBook() {
     let author = document.createElement("h3");
     let pages = document.createElement("h3");
     let status = document.createElement("h3");
-
+    let btnDiv = document.createElement("div");
+    let removeBtn = document.createElement("button");
+    let changeStatus = document.createElement("button");
     title.innerText = "Title: " + myLibrary[book].title;
     author.innerText = "Author: " + myLibrary[book].author;
     pages.innerHTML = "Pages: " + myLibrary[book].pagesAmount;
     status.innerHTML = "Status: " + myLibrary[book].readStatus;
+
+    removeBtn.classList.add("removeBook");
+    removeBtn.innerText = "Remove";
+    changeStatus.classList.add("changeBookStatus");
+    changeStatus.innerText = "Change status";
+    btnDiv.classList.add("buttonContainer");
+    btnDiv.appendChild(removeBtn);
+    btnDiv.appendChild(changeStatus);
 
     bookCard.classList.add("bookCard");
     bookCard.appendChild(title);
     bookCard.appendChild(author);
     bookCard.appendChild(pages);
     bookCard.appendChild(status);
+    bookCard.appendChild(btnDiv);
 
     booksCardList.appendChild(bookCard);
   }
