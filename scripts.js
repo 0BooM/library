@@ -116,7 +116,7 @@ function formValidation() {
       pagesSpan.innerText = "Correct!";
       pagesSpan.classList.add("correct");
     } else {
-      pagesSpan.innerText = "Book must contain page!";
+      pagesSpan.innerText = "Book must contain a page!";
       pagesSpan.classList.remove("correct");
     }
   });
@@ -156,9 +156,33 @@ addBookFormBtn.addEventListener("click", (e) => {
     addBookToLibrary(title.value, author.value, pages.value, status.value);
     displayBook();
     dialog.close();
-    title.value = "";
-    author.value = "";
-    pages.value = "";
-    status.value = "";
+    resetFormFields();
   }
 });
+
+function resetFormFields() {
+  let title = document.querySelector("#title");
+  let author = document.querySelector("#author");
+  let pages = document.querySelector("#pages");
+  let status = document.querySelector("#status");
+
+  title.value = "";
+  author.value = "";
+  pages.value = "";
+  status.value = "";
+
+  let titleSpan = document.querySelector(".titleSpan");
+  let authorSpan = document.querySelector(".authorSpan");
+  let pagesSpan = document.querySelector(".pagesSpan");
+  let statusSpan = document.querySelector(".statusSpan");
+
+  titleSpan.innerText = "At least 10 characters!";
+  authorSpan.innerText = "At least 5 characters!";
+  pagesSpan.innerText = "Book must contain a page!";
+  statusSpan.innerText = "Incorrect! Available statuses: Read/Unread";
+
+  titleSpan.classList.remove("correct");
+  authorSpan.classList.remove("correct");
+  pagesSpan.classList.remove("correct");
+  statusSpan.classList.remove("correct");
+}
