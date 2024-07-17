@@ -162,14 +162,3 @@ addBookFormBtn.addEventListener("click", (e) => {
     status.value = "";
   }
 });
-
-// function removeBook() {
-//   let removeBtn = document.querySelectorAll(".removeBook");
-//   removeBtn.forEach((button) => {
-//     button.addEventListener("click", (e) => {
-//       console.log(e.target.parentNode.parentNode);
-//     });
-//   });
-// }
-
-// removeBook();
