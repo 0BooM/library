@@ -20,7 +20,8 @@ function displayBook() {
   const main = document.querySelector("main");
   main.innerHTML = '<div class="booksList"></div>';
   let booksCardList = document.querySelector(".booksList");
-  for (book in myLibrary) {
+
+  myLibrary.forEach((book, index) => {
     let bookCard = document.createElement("div");
     let title = document.createElement("h2");
     let author = document.createElement("h3");
@@ -28,19 +29,20 @@ function displayBook() {
     let status = document.createElement("h3");
     let btnDiv = document.createElement("div");
     let removeBtn = document.createElement("button");
-    let changeStatus = document.createElement("button");
-    title.innerText = "Title: " + myLibrary[book].title;
-    author.innerText = "Author: " + myLibrary[book].author;
-    pages.innerHTML = "Pages: " + myLibrary[book].pagesAmount;
-    status.innerHTML = "Status: " + myLibrary[book].readStatus;
+    let changeStatusBtn = document.createElement("button");
+
+    title.innerText = "Title: " + book.title;
+    author.innerText = "Author: " + book.author;
+    pages.innerHTML = "Pages: " + book.pagesAmount;
+    status.innerHTML = "Status: " + book.readStatus;
 
     removeBtn.classList.add("removeBook");
     removeBtn.innerText = "Remove";
-    changeStatus.classList.add("changeBookStatus");
-    changeStatus.innerText = "Change status";
+    changeStatusBtn.classList.add("changeBookStatus");
+    changeStatusBtn.innerText = "Change status";
     btnDiv.classList.add("buttonContainer");
     btnDiv.appendChild(removeBtn);
-    btnDiv.appendChild(changeStatus);
+    btnDiv.appendChild(changeStatusBtn);
 
     bookCard.classList.add("bookCard");
     bookCard.appendChild(title);
@@ -49,8 +51,22 @@ function displayBook() {
     bookCard.appendChild(status);
     bookCard.appendChild(btnDiv);
 
+    removeBtn.addEventListener("click", () => {
+      myLibrary.splice(index, 1);
+      displayBook();
+    });
+
+    changeStatusBtn.addEventListener("click", () => {
+      if (book.readStatus.toUpperCase() === "READ") {
+        book.readStatus = "Unread";
+        status.innerText = "Status: " + book.readStatus;
+      } else {
+        book.readStatus = "Read";
+        status.innerText = "Status: " + book.readStatus;
+      }
+    });
     booksCardList.appendChild(bookCard);
-  }
+  });
 }
 
 displayBook();
@@ -146,3 +162,14 @@ addBookFormBtn.addEventListener("click", (e) => {
     status.value = "";
   }
 });
+
+// function removeBook() {
+//   let removeBtn = document.querySelectorAll(".removeBook");
+//   removeBtn.forEach((button) => {
+//     button.addEventListener("click", (e) => {
+//       console.log(e.target.parentNode.parentNode);
+//     });
+//   });
+// }
+
+// removeBook();
